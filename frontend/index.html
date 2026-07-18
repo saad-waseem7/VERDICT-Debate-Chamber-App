@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verdict | Autonomous Debate Chamber</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <!-- Typographic wordmark replaces the previous raster logo -->
+            <div class="brand-mark">
+                <div class="wordmark">VERDICT<span>Autonomous Debate Chamber</span></div>
+                <div class="rule"></div>
+            </div>
+        </div>
+        <div class="top-bar-right">
+            <input type="text" id="topicInput" placeholder="Enter custom debate topic..." />
+            <div class="clock-container">
+                <div class="clock-label">Backend Status</div>
+                <div class="clock" id="networkStatus">IDLE</div>
+            </div>
+            <button class="btn-start" id="startBtn">Initialize Nodes</button>
+        </div>
+    </header>
+
+    <!-- Topic Banner -->
+    <div class="topic-banner" id="topicBanner">
+        <span class="topic-label">Live API Topic</span>
+        <h2 id="displayTopic">Awaiting system initialization…</h2>
+    </div>
+
+    <!-- Arena -->
+    <main class="arena">
+        <!-- Agent A -->
+        <section class="agent-panel advocate-panel" id="panelA">
+            <div class="agent-badge advocate-badge">
+                <div class="agent-avatar">A</div>
+                <div>
+                    <h3>Agent A · The Advocate</h3>
+                    <p>Builds the strongest possible case in favor</p>
+                </div>
+                <div class="live-dot" id="dotA"></div>
+            </div>
+            <div class="feed" id="feedA"></div>
+        </section>
+
+        <!-- Agent B -->
+        <section class="agent-panel challenger-panel" id="panelB">
+            <div class="agent-badge challenger-badge">
+                <div class="agent-avatar">B</div>
+                <div>
+                    <h3>Agent B · The Challenger</h3>
+                    <p>Stress-tests every claim, argues the counter</p>
+                </div>
+                <div class="live-dot" id="dotB"></div>
+            </div>
+            <div class="feed" id="feedB"></div>
+        </section>
+    </main>
+
+    <!-- Status Bar -->
+    <footer class="status-bar">
+        <div class="status-left">
+            <span class="status-dot" id="globalDot"></span>
+            <span id="statusText">Awaiting Python REST connection…</span>
+        </div>
+        <div class="status-right">
+            <button id="nextTurnBtn" disabled>Pass Turn →</button>
+            <button id="endDebateBtn" disabled>End &amp; Judge</button>
+        </div>
+    </footer>
+
+    <!-- Judge Modal -->
+    <div class="judge-overlay" id="judgeOverlay">
+        <div class="judge-card">
+            <div class="judge-header">
+                <div class="judge-icon">⚖</div>
+                <h2>Machine Learning Judge Verdict</h2>
+                <p>SciKit-Learn Regression Model · Feature Analysis Complete</p>
+            </div>
+            <div class="judge-scores">
+                <div class="score-card advocate-score-card">
+                    <p>Agent A · Advocate</p>
+                    <div class="score-num" id="scoreA">0.0</div>
+                    <div class="score-bar">
+                        <div class="score-fill advocate-fill" id="barA"></div>
+                    </div>
+                </div>
+                <div class="vs-badge">VS</div>
+                <div class="score-card challenger-score-card">
+                    <p>Agent B · Challenger</p>
+                    <div class="score-num" id="scoreB">0.0</div>
+                    <div class="score-bar">
+                        <div class="score-fill challenger-fill" id="barB"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="verdict-box" id="verdictBox"></div>
+            <div class="judge-metrics" id="judgeMetrics"></div>
+            <button class="btn-reset" onclick="location.reload()">Reset API Connection</button>
+        </div>
+    </div>
+
+    <!-- Production App Script (Connects to Python Backend) -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
