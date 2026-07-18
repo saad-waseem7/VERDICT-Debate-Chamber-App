@@ -80,14 +80,6 @@ Include in the repository:
 - `historical_debates.csv`
 - `README.md`
 - `requirements.txt`
-- `.gitignore`
-
-Do not upload:
-
-- `.venv/`
-- `__pycache__/`
-- `.pytest_cache/`
-- local temporary files and system-generated cache data
 
 ## Notes
 
