@@ -2,7 +2,7 @@
 
 **Autonomous Debate Chamber**
 
-Verdict is a lightweight AI project that pairs two conversational agents against each other on any topic, streams the exchange through a web interface, and scores the outcome with a machine learning judge. Enter a topic, watch the agents argue opposing sides in real time, and get a verdict backed by a trained regression model — not a coin flip.
+Verdict is a lightweight AI project that pairs two conversational agents against each other on any topic, streams the exchange through a web interface, and scores the outcome with a machine learning judge. Enter a topic, watch the agents argue opposing sides in real time, and get a verdict backed by a trained regression model, not a coin flip.
 
 ## What It Does
 
